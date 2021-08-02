@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>基数変換機</h1>
-
+    <a href="https://github.com/yu-dotcom/kisuu_henkan/blob/main/index.php" class="source" target="_blank">ソースコード(GitHub)</a>
     <form action="./index.php" method="POST" class="form">
         <p>入力した
             <select name="before">
@@ -36,10 +36,10 @@
     *$strが1か0のみで構成されていればtrue,それ以外の文字を含む場合false
     */
     function is_bin($str){
-        if (preg_match("/[0-1]/", $str)) {
-            return true;
+        if (preg_match("/[^0-1]/", $str)) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     /*
@@ -47,10 +47,10 @@
     *$strが0～7のみで構成されていればtrue,それ以外の文字を含む場合false
     */
     function is_octal($str){
-        if (preg_match("/^[0-7]/", $str)) {
-            return true;
+        if (preg_match("/[^0-7]/", $str)) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     /*
@@ -58,10 +58,10 @@
     *$strが0～9のみで構成されていればtrue,それ以外の文字を含む場合false
     */
     function is_dec($str){
-        if (preg_match("/^[0-9]/", $str)) {
-            return true;
+        if (preg_match("/[^0-9]/", $str)) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     /*
